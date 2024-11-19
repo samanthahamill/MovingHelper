@@ -1,26 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { ReservationService } from '../reservation/reservation.service';
-import { Reservation } from '../models/reservation';
+import { Component, OnInit } from "@angular/core";
+import { ReservationService } from "../reservation/reservation.service";
+import { Reservation } from "../models/reservation";
 
 @Component({
-  selector: 'app-reservation-list',
-  templateUrl: './reservation-list.component.html',
-  styleUrls: ['./reservation-list.component.css'],
+    selector: "app-reservation-list",
+    templateUrl: "./reservation-list.component.html",
+    styleUrls: ["./reservation-list.component.css"],
 })
 export class ReservationListComponent implements OnInit {
-  reservations: Reservation[] = [];
+    reservations: Reservation[] = [];
 
-  constructor(private reservationService: ReservationService) {}
+    constructor(private reservationService: ReservationService) {}
 
-  ngOnInit(): void {
-    this.reservations = this.reservationService.getReservations();
-  }
+    ngOnInit(): void {
+        this.reservationService.getReservations().subscribe(res => {
+            this.reservations = res;
+        });
+    }
 
-  deleteReservation(id: string): void {
-    this.reservationService.deleteReservation(id);
-  }
+    deleteReservation(id: string): void {
+        this.reservationService.deleteReservation(id).subscribe(() => {
+            console.log("Reservation delete processed");
+        });
+    }
 
-  deleteAllReservations(): void {
-    this.reservationService.deleteAllReservations();
-  }
+    deleteAllReservations(): void {
+        this.reservationService.deleteAllReservations();
+    }
 }
