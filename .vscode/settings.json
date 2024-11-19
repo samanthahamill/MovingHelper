@@ -1,0 +1,8 @@
+{
+  "editor.formatOnSave": true,
+  "vetur.format.defaultFormatter.ts": "none",
+  "vetur.format.defaultFormatter.js": "none",
+  "vetur.format.enable": false,
+  "javascript.format.enable": false,
+  "typescript.format.enable": false,
+}
