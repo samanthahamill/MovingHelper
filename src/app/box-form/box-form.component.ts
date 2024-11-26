@@ -3,11 +3,21 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BoxService } from '../box/box.service';
 import { Box } from '../models/box';
 import { Router, ActivatedRoute } from '@angular/router';
+import { HomeComponent } from '../home/home.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-box-form',
   templateUrl: './box-form.component.html',
   styleUrls: ['./box-form.component.css'],
+  imports: [HomeComponent,
+    MatSnackBarModule,
+    MatSelectModule,
+    MatInputModule,
+    MatCardModule,]
 })
 export class BoxFormComponent implements OnInit {
   boxForm: FormGroup = new FormGroup({});
