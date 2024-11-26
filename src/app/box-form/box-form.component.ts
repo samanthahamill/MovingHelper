@@ -1,26 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ReservationService } from '../reservation/reservation.service';
-import { Reservation } from '../models/reservation';
+import { BoxService } from '../box/box.service';
+import { Box } from '../models/box';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-reservation-form',
-  templateUrl: './reservation-form.component.html',
-  styleUrls: ['./reservation-form.component.css'],
+  selector: 'app-box-form',
+  templateUrl: './box-form.component.html',
+  styleUrls: ['./box-form.component.css'],
 })
-export class ReservationFormComponent implements OnInit {
-  reservationForm: FormGroup = new FormGroup({});
+export class BoxFormComponent implements OnInit {
+  boxForm: FormGroup = new FormGroup({});
 
   constructor(
     private formatBuilder: FormBuilder,
-    private reservationService: ReservationService,
+    private boxService: BoxService,
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.reservationForm = this.formatBuilder.group({
+    this.boxForm = this.formatBuilder.group({
       // Note that each of the names here must be the same as the formControlName in .html
       checkInDate: ['', Validators.required],
       checkOutDate: ['', Validators.required],
@@ -32,22 +32,22 @@ export class ReservationFormComponent implements OnInit {
     // check if we can obtain an 'id' for our route. This is possible at the 'edit/{id}' endpoint
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     if (id) {
-      const reservation = this.reservationService.getReservation(id);
-      if (reservation) {
-        this.reservationForm.patchValue(reservation);
+      const box = this.boxService.getBox(id);
+      if (box) {
+        this.boxForm.patchValue(box);
       }
     }
   }
 
   onSubmit() {
-    if (this.reservationForm.valid) {
-      const reservation: Reservation = this.reservationForm.value;
+    if (this.boxForm.valid) {
+      const box: Box = this.boxForm.value;
 
       const id = this.activatedRoute.snapshot.paramMap.get('id');
       if (id) {
-        this.reservationService.updateReservation(id, reservation);
+        this.boxService.updateBox(id, box);
       } else {
-        this.reservationService.addReservation(reservation);
+        this.boxService.addBox(box);
       }
 
       this.router.navigate(['/list']);

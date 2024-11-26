@@ -1,4 +1,4 @@
-export interface Reservation {
+export interface Box {
   id: string;
   checkInDate: Date;
   checkOutDate: Date;

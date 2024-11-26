@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { ReservationFormComponent } from './reservation-form/reservation-form.component';
-import { ReservationListComponent } from './reservation-list/reservation-list.component';
+import { BoxFormComponent } from './box-form/box-form.component';
+import { BoxListComponent } from './box-list/box-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'list', component: ReservationListComponent },
-  { path: 'new', component: ReservationFormComponent },
-  { path: 'edit/:id', component: ReservationFormComponent },
+  { path: 'list', component: BoxListComponent },
+  { path: 'new', component: BoxFormComponent },
+  { path: 'edit/:id', component: BoxFormComponent },
 ];
 
 @NgModule({ 

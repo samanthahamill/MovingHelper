@@ -2,9 +2,9 @@
 
 <hr />
 
-<h3 class="mt-5 mb-3">Create a New Reservation</h3>
+<h3 class="mt-5 mb-3">Create a New Box</h3>
 
-<form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="boxForm" (ngSubmit)="onSubmit()">
   <div class="row mb-3">
     <div class="col">
       <label class="form-label">Check-In Date:</label>
@@ -12,8 +12,8 @@
       <small
         class="text-danger"
         *ngIf="
-          reservationForm.get('checkInDate')?.invalid &&
-          reservationForm.get('checkInDate')?.touched
+          boxForm.get('checkInDate')?.invalid &&
+          boxForm.get('checkInDate')?.touched
         "
       >
         Check-In Date is required
@@ -26,8 +26,8 @@
       <small
         class="text-danger"
         *ngIf="
-          reservationForm.get('checkOutDate')?.invalid &&
-          reservationForm.get('checkOutDate')?.touched
+          boxForm.get('checkOutDate')?.invalid &&
+          boxForm.get('checkOutDate')?.touched
         "
       >
         Check-Out Date is required
@@ -41,8 +41,8 @@
       <small
         class="text-danger"
         *ngIf="
-          reservationForm.get('guestName')?.invalid &&
-          reservationForm.get('guestName')?.touched
+          boxForm.get('guestName')?.invalid &&
+          boxForm.get('guestName')?.touched
         "
       >
         Guest Name is required
@@ -55,8 +55,8 @@
       <small
         class="text-danger"
         *ngIf="
-          reservationForm.get('guestEmail')?.invalid &&
-          reservationForm.get('guestEmail')?.touched
+          boxForm.get('guestEmail')?.invalid &&
+          boxForm.get('guestEmail')?.touched
         "
       >
         Guest Email is required
@@ -71,8 +71,8 @@
       <small
         class="text-danger"
         *ngIf="
-          reservationForm.get('roomNumber')?.invalid &&
-          reservationForm.get('roomNumber')?.touched
+          boxForm.get('roomNumber')?.invalid &&
+          boxForm.get('roomNumber')?.touched
         "
       >
         Room Number is required
@@ -83,7 +83,7 @@
   <button
     class="btn btn-primary"
     type="submit"
-    [disabled]="reservationForm.invalid"
+    [disabled]="boxForm.invalid"
   >
     Submit
   </button>
