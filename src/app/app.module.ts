@@ -1,14 +1,24 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomeModule } from './home/home.module';
-import { ReservationModule } from './reservation/reservation.module';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { ProductModule } from "./product/product.module";
+import { AppRoutingModule } from "./app-routing.module";
+import { CartModule } from "./cart/cart.module";
+import { HttpClientModule } from "@angular/common/http";
+import { AppComponent } from "./app.component";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatButtonModule } from "@angular/material/button";
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HomeModule, ReservationModule],
+  imports: [
+    BrowserModule,
+    MatToolbarModule,
+    MatButtonModule,
+    AppRoutingModule,
+    ProductModule,
+    HttpClientModule,
+    CartModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

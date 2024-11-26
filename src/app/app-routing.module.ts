@@ -1,17 +1,15 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ReservationFormComponent } from './reservation-form/reservation-form.component';
-import { ReservationListComponent } from './reservation-list/reservation-list.component';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { ProductListComponent } from "./product/product-list/product-list.component";
+import { CartViewComponent } from "./cart/cart-view/cart-view.component";
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'list', component: ReservationListComponent },
-  { path: 'new', component: ReservationFormComponent },
-  { path: 'edit/:id', component: ReservationFormComponent },
+  { path: "", redirectTo: "/products", pathMatch: "full" },
+  { path: "products", component: ProductListComponent },
+  { path: "cart", component: CartViewComponent },
 ];
 
-@NgModule({ 
+@NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
