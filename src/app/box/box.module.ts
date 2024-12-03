@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HomeModule } from '../home/home.module';
 
-@NgModule({
+@NgModule( {
   imports: [
     CommonModule,
     FormsModule,
@@ -12,5 +12,5 @@ import { HomeModule } from '../home/home.module';
     RouterModule,
     HomeModule,
   ],
-})
+} )
 export class BoxModule {}

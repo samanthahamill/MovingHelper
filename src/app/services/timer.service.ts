@@ -1,26 +1,23 @@
 import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable( { providedIn: 'root' } )
 export class TimerService {
   private targetDate: Date;
 
   constructor() {
-    this.targetDate = new Date('2025-12-25T00:00:00');
+    this.targetDate = new Date( '2025-12-25T00:00:00' );
   }
 
   // CRUD
-  getTargetDate():Date {
+  getTargetDate(): Date {
     return this.targetDate;
   }
 
-  setTargetDate(date: Date): void {
-   // TODO - implement
+  setTargetDate( ): void {
+    // TODO - implement
   }
 
-  changeTargetDate(date: Date): void {
+  changeTargetDate( ): void {
     // TODO - implement
   }
 }
- 

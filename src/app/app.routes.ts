@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { BoxFormComponent } from './box-form/box-form.component';
 import { BoxListComponent } from './box-list/box-list.component';
@@ -14,8 +13,20 @@ export const NEW_MOVE_FULL = "move";
 export const NEW_MOVE_FULL_PATH = "/" + NEW_MOVE_FULL;
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: LIST_PATH, component: BoxListComponent },
-  { path: NEW_BOX_PATH, component: BoxFormComponent },
-  { path: EDIT_BOX_PATH, component: BoxFormComponent },
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: LIST_PATH,
+    component: BoxListComponent
+  },
+  {
+    path: NEW_BOX_PATH,
+    component: BoxFormComponent
+  },
+  {
+    path: EDIT_BOX_PATH,
+    component: BoxFormComponent
+  },
 ];

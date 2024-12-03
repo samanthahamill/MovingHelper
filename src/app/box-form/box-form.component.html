@@ -3,8 +3,8 @@
 <form [formGroup]="boxForm" (ngSubmit)="onSubmit()">
   <div class="row mb-3">
     <div class="col">
-      <label class="form-label">Name:</label>
-      <input class="form-control" type="text" formControlName="name" />
+      <label for="name-select" class="form-label">Name:</label>
+      <input id="name-select" class="form-control" type="text" formControlName="name" />
       <small
         class="text-danger"
         *ngIf="
@@ -17,8 +17,8 @@
     </div>
 
     <div class="col">
-      <label class="form-label">Size:</label>
-      <select class="form-control" formControlName="size">
+      <label for="size-select" class="form-label" >Size:</label>
+      <select id="size-select" class="form-control" formControlName="size">
         <option *ngFor="let option of listOfBoxTypes" [value]="option">{{option}}</option>/>
       </select>
       <small
@@ -34,8 +34,8 @@
   </div>
   <div class="row mb-3">
     <div class="col">
-      <label class="form-label">Room Type:</label>
-      <select class="form-control" formControlName="associatedRoom">
+      <label for="associatedRoom-select" class="form-label">Room Type:</label>
+      <select id = "associatedRoom-select" class="form-control" formControlName="associatedRoom">
         <option *ngFor="let option of listOfRoomTypes" [value]="option">{{option}}</option>/>
       </select>
       <small
@@ -52,8 +52,9 @@
 
   <div class="row mb-3">
     <div class="col">
-      <label class="form-label">Description:</label>
+      <label for="description-select" class="form-label">Description:</label>
       <input 
+        id="description-select" 
         class="form-control" 
         type="text" 
         formControlName="description" 

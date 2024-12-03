@@ -12,16 +12,18 @@ export type MenuItem = {
   nestedItems?: Array<MenuItem>;
 }
 
-@Component({
+@Component( {
   selector: 'app-popout-sidenav',
   standalone: true,
-  imports: [MatListModule, MatIconModule, NgFor, RouterModule],
+  imports: [
+    MatListModule, MatIconModule, NgFor, RouterModule
+  ],
   templateUrl: './popout-sidenav.component.html',
   styleUrl: './popout-sidenav.component.css'
-})
+} )
 export class PopoutSidenavComponent {
-  
-  menuItems = signal<Array<MenuItem>>([
+
+  menuItems = signal<Array<MenuItem>>( [
     {
       icon: "dashboard",
       label: "See Current Boxes",
@@ -32,6 +34,6 @@ export class PopoutSidenavComponent {
       label: "Add a New Box",
       route: NEW_BOX_FULL_PATH
     },
-  ])
+  ] )
 
 }
