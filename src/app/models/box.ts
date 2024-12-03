@@ -9,7 +9,7 @@ export interface Box {
   // inputs provided by user
   name: string;
   size: BoxSize;
-  description: string;
+  description?: string;
   associatedRoom: RoomType;
 }
 
@@ -56,13 +56,21 @@ export const boxSizeToUrl = (type: BoxSize): string =>
     switch(type)
     {
       case BoxSize.SMALL:
+        return "small-box.jpg";
       case BoxSize.MEDIUM:
+        return "medium-box.jpg";
       case BoxSize.PICTURE:
+        return "picture-box.jpg";
       case BoxSize.LARGE:
+        return "large-box.jpg";
       case BoxSize.LARGE_PICTURE:
+        return "large-mirror-box.jpg";
       case BoxSize.X_LARGE:
+        return "extra-large-box.jpg";
       case BoxSize.TV:
+        return "tv-box.jpg";
       case BoxSize.BOOK:
+        return "book-box.jpg";
       case BoxSize.UNKNOWN: 
       default: 
         return "unknown.png";

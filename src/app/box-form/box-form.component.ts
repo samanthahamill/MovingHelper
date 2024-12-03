@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule  } from '@angular/forms';
 import { BoxService } from '../box/box.service';
-import { Box, BoxSize } from '../models/box';
+import { Box, BoxSize, boxSizeToUrl } from '../models/box';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
@@ -38,7 +38,7 @@ export class BoxFormComponent implements OnInit {
     this.boxForm = this.formatBuilder.group({
       name: ["Box number " + this.boxService.getBoxCount()],
       size: ['', Validators.required],
-      description: [''],
+      description: [],
       associatedRoom: ['', Validators.required],
     });
    }
@@ -47,7 +47,7 @@ export class BoxFormComponent implements OnInit {
     this.boxForm = this.formatBuilder.group({
       name: ["Box number " + this.boxService.getBoxCount()],
       size: ['', Validators.required],
-      description: [''],
+      description: [],
       associatedRoom: ['', Validators.required],
     });
 
@@ -64,6 +64,15 @@ export class BoxFormComponent implements OnInit {
   onSubmit() {
     if (this.boxForm.valid) {
       const box: Box = this.boxForm.value;
+
+      if( box.description === "" || box.description === null )
+      {
+        box.description = undefined;
+      }
+
+      box.id = Date.now().toPrecision();
+      box.image_url = boxSizeToUrl(box.size);
+      box.creationDate = new Date( Date.now().valueOf() );
 
       const id = this.activatedRoute.snapshot.paramMap.get('id');
       if (id) {

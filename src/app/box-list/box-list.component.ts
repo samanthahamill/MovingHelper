@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-box-list',
@@ -19,6 +20,7 @@ import { CommonModule } from '@angular/common';
     MatInputModule,
     MatCardModule,
     CommonModule,
+    RouterModule
   ]
 })
 export class BoxListComponent implements OnInit {
@@ -30,6 +32,7 @@ export class BoxListComponent implements OnInit {
 
   ngOnInit(): void {
     this.boxes = this.boxService.getBoxes();
+    this.filteredBoxes = this.boxes;
   }
 
   deleteBox(id: string): void {
@@ -49,6 +52,14 @@ export class BoxListComponent implements OnInit {
     );
 
     this.sortProducts(this.sortOrder);
+  }
+
+  getFullImageUrl(baseUrl: string): string {
+    return `assets/images/${baseUrl}`;
+  }
+
+  getDescription(description?: string): string {
+    return description !== undefined ? `| ${description}` : "";
   }
 
   sortProducts(sortValue: string): void {
