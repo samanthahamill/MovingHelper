@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CommonModule } from '@angular/common';
+import { RoomType } from '../models/room';
 
 @Component({
   selector: 'app-box-form',
@@ -26,6 +27,7 @@ import { CommonModule } from '@angular/common';
 export class BoxFormComponent implements OnInit {
   boxForm: FormGroup;
   listOfBoxTypes: Array<BoxSize> = Object.values(BoxSize).filter(val => val != BoxSize.UNKNOWN);
+  listOfRoomTypes: Array<RoomType> = Object.values(RoomType).filter(val => val != RoomType.UNKNOWN);
 
   constructor(
     private formatBuilder: FormBuilder,

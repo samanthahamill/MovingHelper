@@ -8,6 +8,7 @@ import {
  } from '../app.routes';
 import { CountdownTimerComponent } from "../components/countdown-timer/countdown-timer.component";
 import { NgIf } from '@angular/common';
+import { TimerService } from '../services/timer.service';
 
 @Component({
   selector: 'app-home',
@@ -23,5 +24,8 @@ export class HomeComponent {
   listPath = LIST_FULL_PATH;
   newMovePath = NEW_MOVE_FULL_PATH;
 
-  targetDate?: Date = new Date('2025-12-25T00:00:00');
+  constructor(protected timerService: TimerService)
+  {
+    
+  }
 }

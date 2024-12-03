@@ -18,7 +18,9 @@
 
     <div class="col">
       <label class="form-label">Size:</label>
-      <input class="form-control" type="text" formControlName="size" />
+      <select class="form-control" formControlName="size">
+        <option *ngFor="let option of listOfBoxTypes" [value]="option">{{option}}</option>/>
+      </select>
       <small
         class="text-danger"
         *ngIf="
@@ -34,7 +36,7 @@
     <div class="col">
       <label class="form-label">Room Type:</label>
       <select class="form-control" formControlName="associatedRoom">
-        <option *ngFor="let option of listOfBoxTypes" [value]="option">{{option}}</option>/>
+        <option *ngFor="let option of listOfRoomTypes" [value]="option">{{option}}</option>/>
       </select>
       <small
         class="text-danger"

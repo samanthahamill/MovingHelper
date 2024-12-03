@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { PopoutSidenavComponent } from "./components/popout-sidenav/popout-sidenav.component"; 
 import { RouterModule } from '@angular/router';
 import { CountdownTimerComponent } from "./components/countdown-timer/countdown-timer.component";
+import { TimerService } from './services/timer.service';
 
 @Component({
   selector: 'app-root',
@@ -33,7 +34,7 @@ export class AppComponent implements AfterViewInit {
   
   title = 'box-app';
 
-  constructor(protected router: Router)
+  constructor(protected router: Router, protected timerService: TimerService)
   {
   }
 

@@ -29,7 +29,7 @@
 <mat-drawer-container *ngIf="router.url !== '/'" [hasBackdrop]="false">
     <mat-drawer>
         <mat-drawer-content>
-            <app-countdown-timer/>
+            <app-countdown-timer [targetDate]="timerService.getTargetDate()"/>
         </mat-drawer-content>
     </mat-drawer>
 </mat-drawer-container>

@@ -21,14 +21,14 @@
   </mat-form-field>
 
   <div fxLayout="row wrap" fxLayoutGap="50px grid">
-      <div *ngFor="let boxes of filteredBoxes">
+      <div *ngFor="let box of filteredBoxes">
           <mat-card class="box-card"> 
           <!-- TODO add onClick that takes to a different page -->
           <!-- (click)="addToCart(box)"> -->
-              <img mat-card-image src="./../../../assets/images/{{boxes.image_url}}" alt = "Could not find image">
+              <img mat-card-image src="./../../../assets/images/{{box.image_url}}" alt = "Could not find image">
               <mat-card-content>
-                  <mat-card-title>{{boxes.name}}</mat-card-title>
-                  <mat-card-subtitle>{{boxes.description}}</mat-card-subtitle>
+                  <mat-card-title>{{box.name}}</mat-card-title>
+                  <mat-card-subtitle>{{box.description}} | {{box.associatedRoom}}</mat-card-subtitle>
               </mat-card-content>
           </mat-card>
       </div>

@@ -1,7 +1,7 @@
-<div class="text-center my-5" *ngIf="targetDate !== undefined; else noTargetDate">
+<div class="text-center my-5" *ngIf="timerService.getTargetDate() !== undefined; else noTargetDate">
   <h2 class="mb-3">Welcome to your moving portal</h2>
 
-  <app-countdown-timer [targetDate]="targetDate"/>
+  <app-countdown-timer [targetDate]="timerService.getTargetDate()"/>
 
   <button class="btn btn-primary mx-2" [routerLink]="[newBoxPath]">
     Create a new box
