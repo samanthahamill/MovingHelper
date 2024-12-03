@@ -8,7 +8,7 @@
     
     <span class="spacer">Moving Tracker</span>
 
-    <button mat-icon-button>
+    <button mat-icon-button [routerLink]="'/'">
         <mat-icon>home</mat-icon>
     </button>
 </mat-toolbar>  
@@ -25,3 +25,11 @@
     <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
+
+<mat-drawer-container *ngIf="router.url !== '/'" [hasBackdrop]="false">
+    <mat-drawer>
+        <mat-drawer-content>
+            <app-countdown-timer/>
+        </mat-drawer-content>
+    </mat-drawer>
+</mat-drawer-container>

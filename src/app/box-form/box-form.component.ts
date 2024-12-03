@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule  } from '@angul
 import { BoxService } from '../box/box.service';
 import { Box } from '../models/box';
 import { Router, ActivatedRoute } from '@angular/router';
-import { HomeComponent } from '../home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -16,7 +15,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./box-form.component.css'],
   standalone: true,
   imports: [
-    HomeComponent,
     MatSnackBarModule,
     MatSelectModule,
     MatInputModule,

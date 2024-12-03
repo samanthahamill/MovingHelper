@@ -3,7 +3,7 @@ import { LIST_FULL_PATH, NEW_BOX_FULL_PATH } from '../../app.routes';
 import { MatListModule } from "@angular/material/list";
 import { MatIconModule } from "@angular/material/icon";
 import { NgFor } from '@angular/common';
-import { CountdownTimerComponent } from "../countdown-timer/countdown-timer.component";
+import { RouterModule } from '@angular/router';
 
 export type MenuItem = {
   icon: string;
@@ -15,7 +15,7 @@ export type MenuItem = {
 @Component({
   selector: 'app-popout-sidenav',
   standalone: true,
-  imports: [MatListModule, MatIconModule, NgFor],
+  imports: [MatListModule, MatIconModule, NgFor, RouterModule],
   templateUrl: './popout-sidenav.component.html',
   styleUrl: './popout-sidenav.component.css'
 })

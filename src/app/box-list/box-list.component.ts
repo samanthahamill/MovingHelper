@@ -14,7 +14,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./box-list.component.css'],
   standalone: true,
   imports: [
-    HomeComponent, 
     MatSnackBarModule,
     MatSelectModule,
     MatInputModule,
