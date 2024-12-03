@@ -1,0 +1,13 @@
+.text-danger{
+    color: red
+}
+
+.box-header{
+    text-align: center;
+}
+
+form {
+    margin: 20px;
+    padding: 10px;
+    background-color: goldenrod;
+}

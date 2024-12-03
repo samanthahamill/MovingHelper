@@ -1,78 +1,61 @@
-<h3 class="mt-5 mb-3">Create a New Box</h3>
+<h3 class="mt-5 mb-3 box-header">Create a New Box</h3>
 
 <form [formGroup]="boxForm" (ngSubmit)="onSubmit()">
   <div class="row mb-3">
     <div class="col">
-      <label class="form-label">Check-In Date:</label>
-      <input class="form-control" type="date" formControlName="checkInDate" />
+      <label class="form-label">Name:</label>
+      <input class="form-control" type="text" formControlName="name" />
       <small
         class="text-danger"
         *ngIf="
-          boxForm.get('checkInDate')?.invalid &&
-          boxForm.get('checkInDate')?.touched
+          boxForm.get('name')?.invalid &&
+          boxForm.get('name')?.touched
         "
       >
-        Check-In Date is required
+        Name is required
       </small>
     </div>
 
     <div class="col">
-      <label class="form-label">Check-Out Date:</label>
-      <input class="form-control" type="date" formControlName="checkOutDate" />
+      <label class="form-label">Size:</label>
+      <input class="form-control" type="text" formControlName="size" />
       <small
         class="text-danger"
         *ngIf="
-          boxForm.get('checkOutDate')?.invalid &&
-          boxForm.get('checkOutDate')?.touched
+          boxForm.get('size')?.invalid &&
+          boxForm.get('size')?.touched
         "
       >
-        Check-Out Date is required
+        Size is required
       </small>
     </div>
   </div>
   <div class="row mb-3">
     <div class="col">
-      <label class="form-label">Guest Name:</label>
-      <input class="form-control" type="text" formControlName="guestName" />
+      <label class="form-label">Room Type:</label>
+      <select class="form-control" formControlName="associatedRoom">
+        <option *ngFor="let option of listOfBoxTypes" [value]="option">{{option}}</option>/>
+      </select>
       <small
         class="text-danger"
         *ngIf="
-          boxForm.get('guestName')?.invalid &&
-          boxForm.get('guestName')?.touched
+          boxForm.get('associatedRoom')?.invalid &&
+          boxForm.get('associatedRoom')?.touched
         "
       >
-        Guest Name is required
-      </small>
-    </div>
-
-    <div class="col">
-      <label class="form-label">Guest Email:</label>
-      <input class="form-control" type="email" formControlName="guestEmail" />
-      <small
-        class="text-danger"
-        *ngIf="
-          boxForm.get('guestEmail')?.invalid &&
-          boxForm.get('guestEmail')?.touched
-        "
-      >
-        Guest Email is required
+        Room Type is required
       </small>
     </div>
   </div>
 
   <div class="row mb-3">
-    <div class="col-3">
-      <label class="form-label">Room Number:</label>
-      <input class="form-control" type="number" formControlName="roomNumber" />
-      <small
-        class="text-danger"
-        *ngIf="
-          boxForm.get('roomNumber')?.invalid &&
-          boxForm.get('roomNumber')?.touched
-        "
-      >
-        Room Number is required
-      </small>
+    <div class="col">
+      <label class="form-label">Description:</label>
+      <input 
+        class="form-control" 
+        type="text" 
+        formControlName="description" 
+      />
     </div>
   </div>
 
@@ -81,6 +64,6 @@
     type="submit"
     [disabled]="boxForm.invalid"
   >
-    Submit
+    Create
   </button>
 </form>

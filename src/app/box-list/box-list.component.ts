@@ -64,11 +64,11 @@ export class BoxListComponent implements OnInit {
     }
     else if (this.sortOrder === "roomAZ") 
     {
-      this.filteredBoxes.sort((a, b) => a.roomContents.localeCompare( b.roomContents ));
+      this.filteredBoxes.sort((a, b) => a.associatedRoom.localeCompare( b.associatedRoom ));
     } 
     else if (this.sortOrder === "roomZA") 
     {
-      this.filteredBoxes.sort((a, b) => b.roomContents.localeCompare( a.roomContents ));
+      this.filteredBoxes.sort((a, b) => b.associatedRoom.localeCompare( a.associatedRoom ));
     }
   }
 }

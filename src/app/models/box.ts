@@ -1,12 +1,16 @@
 import { RoomType } from "./room";
 
 export interface Box {
+  // input created by form manager
   id: string;
+  creationDate: Date;
+  image_url: string;
+
+  // inputs provided by user
   name: string;
   size: BoxSize;
   description: string;
-  roomContents: RoomType;
-  image_url: string;
+  associatedRoom: RoomType;
 }
 
 export enum BoxSize {

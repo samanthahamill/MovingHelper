@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule  } from '@angular/forms';
 import { BoxService } from '../box/box.service';
-import { Box } from '../models/box';
+import { Box, BoxSize } from '../models/box';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
@@ -25,6 +25,7 @@ import { CommonModule } from '@angular/common';
 })
 export class BoxFormComponent implements OnInit {
   boxForm: FormGroup;
+  listOfBoxTypes: Array<BoxSize> = Object.values(BoxSize).filter(val => val != BoxSize.UNKNOWN);
 
   constructor(
     private formatBuilder: FormBuilder,
@@ -33,21 +34,20 @@ export class BoxFormComponent implements OnInit {
     private activatedRoute: ActivatedRoute
   ) { 
     this.boxForm = this.formatBuilder.group({
-      name: [this.boxService.getBoxCount()],
+      name: ["Box number " + this.boxService.getBoxCount()],
       size: ['', Validators.required],
       description: [''],
-      roomContents: ['', Validators.required],
+      associatedRoom: ['', Validators.required],
     });
    }
 
   ngOnInit(): void {
-    // this.boxForm = this.formatBuilder.group({
-    //   id: [this.boxService.getBoxCount()], // TODO - auto fill with the current box count
-    //   name: ['', Validators.required],
-    //   size: ['', Validators.required],
-    //   description: [''],
-    //   roomContents: ['', Validators.required],
-    // });
+    this.boxForm = this.formatBuilder.group({
+      name: ["Box number " + this.boxService.getBoxCount()],
+      size: ['', Validators.required],
+      description: [''],
+      associatedRoom: ['', Validators.required],
+    });
 
     // check if we can obtain an 'id' for our route. This is possible at the 'edit/{id}' endpoint
     const id = this.activatedRoute.snapshot.paramMap.get('id');
