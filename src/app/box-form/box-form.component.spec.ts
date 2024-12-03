@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeComponent } from './home.component';
+import { BoxFormComponent } from './box-form.component';
 
-describe( 'HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+describe( 'BoxFormComponent', () => {
+  let component: BoxFormComponent;
+  let fixture: ComponentFixture<BoxFormComponent>;
 
   beforeEach( () => {
     TestBed.configureTestingModule( {
       declarations: [
-        HomeComponent
+        BoxFormComponent
       ]
     } );
-    fixture = TestBed.createComponent( HomeComponent );
+    fixture = TestBed.createComponent( BoxFormComponent );
     component = fixture.componentInstance;
     fixture.detectChanges();
   } );

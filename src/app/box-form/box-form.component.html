@@ -1,0 +1,72 @@
+<h3 class="mt-5 mb-3 box-header">Create a New Box</h3>
+
+<form [formGroup]="boxForm" (ngSubmit)="onSubmit()">
+  <div class="row mb-3">
+    <div class="col">
+      <label for="name-select" class="form-label">Name:</label>
+      <input id="name-select" class="form-control" type="text" formControlName="name" />
+      <small
+        class="text-danger"
+        *ngIf="
+          boxForm.get('name')?.invalid &&
+          boxForm.get('name')?.touched
+        "
+      >
+        Name is required
+      </small>
+    </div>
+
+    <div class="col">
+      <label for="size-select" class="form-label" >Size:</label>
+      <select id="size-select" class="form-control" formControlName="size">
+        <option *ngFor="let option of listOfBoxTypes" [value]="option">{{option}}</option>/>
+      </select>
+      <small
+        class="text-danger"
+        *ngIf="
+          boxForm.get('size')?.invalid &&
+          boxForm.get('size')?.touched
+        "
+      >
+        Size is required
+      </small>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col">
+      <label for="associatedRoom-select" class="form-label">Room Type:</label>
+      <select id = "associatedRoom-select" class="form-control" formControlName="associatedRoom">
+        <option *ngFor="let option of listOfRoomTypes" [value]="option">{{option}}</option>/>
+      </select>
+      <small
+        class="text-danger"
+        *ngIf="
+          boxForm.get('associatedRoom')?.invalid &&
+          boxForm.get('associatedRoom')?.touched
+        "
+      >
+        Room Type is required
+      </small>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col">
+      <label for="description-select" class="form-label">Description:</label>
+      <input 
+        id="description-select" 
+        class="form-control" 
+        type="text" 
+        formControlName="description" 
+      />
+    </div>
+  </div>
+
+  <button
+    class="btn btn-primary"
+    type="submit"
+    [disabled]="boxForm.invalid"
+  >
+    Create
+  </button>
+</form>

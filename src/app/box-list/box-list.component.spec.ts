@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeComponent } from './home.component';
+import { BoxListComponent } from './box-list.component';
 
-describe( 'HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+describe( 'BoxListComponent', () => {
+  let component: BoxListComponent;
+  let fixture: ComponentFixture<BoxListComponent>;
 
   beforeEach( () => {
     TestBed.configureTestingModule( {
       declarations: [
-        HomeComponent
-      ]
+        BoxListComponent
+      ],
     } );
-    fixture = TestBed.createComponent( HomeComponent );
+    fixture = TestBed.createComponent( BoxListComponent );
     component = fixture.componentInstance;
     fixture.detectChanges();
   } );

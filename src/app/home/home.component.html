@@ -1,10 +1,29 @@
-<div class="text-center my-5">
-  <h2 class="mb-3">Welcome to the Hotel Reservation Portal</h2>
+<div class="text-center my-5" *ngIf="timerService.getTargetDate() !== undefined; else noTargetDate">
+  <h2 class="mb-3">Welcome to your moving portal</h2>
 
-  <button class="btn btn-primary mx-2" [routerLink]="['/new']">
-    Create a new reservation
+  <app-countdown-timer [targetDate]="timerService.getTargetDate()"/>
+
+  <button class="btn btn-primary mx-2" [routerLink]="[newBoxPath]">
+    Create a new box
   </button>
-  <button class="btn btn-primary mx-2" [routerLink]="['/list']">
-    View all reservations
+  <button class="btn btn-primary mx-2" [routerLink]="[listPath]">
+    View all my boxes
   </button>
 </div>
+
+<router-outlet />
+
+
+<ng-template #noTargetDate>
+  <div  class="text-center my-5">
+    <p> 
+      You have yet to set up a move profile. 
+      <br>
+      Click the button below to create a new move
+      profile so your counter can get started!
+    </p>
+    <button class="btn btn-primary mx-2" [routerLink]="[newMovePath]">
+      Start a new move
+    </button>
+  </div>
+</ng-template>

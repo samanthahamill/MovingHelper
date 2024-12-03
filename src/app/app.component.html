@@ -1,1 +1,35 @@
-<router-outlet></router-outlet>
+<mat-toolbar 
+    color="primary" 
+    class="mat-elevation-z3"
+>
+    <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    
+    <span class="spacer">Moving Tracker</span>
+
+    <button mat-icon-button [routerLink]="'/'">
+        <mat-icon>home</mat-icon>
+    </button>
+</mat-toolbar>  
+  
+<mat-sidenav-container autosize [hasBackdrop]="true">
+    <mat-sidenav 
+        #sidenav
+        mode="side" 
+    >
+      <app-popout-sidenav/>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+      
+    <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-drawer-container *ngIf="router.url !== '/'" [hasBackdrop]="false">
+    <mat-drawer>
+        <mat-drawer-content>
+            <app-countdown-timer [targetDate]="timerService.getTargetDate()"/>
+        </mat-drawer-content>
+    </mat-drawer>
+</mat-drawer-container>

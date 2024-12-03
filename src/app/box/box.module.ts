@@ -1,13 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReservationFormComponent } from '../reservation-form/reservation-form.component';
-import { ReservationListComponent } from '../reservation-list/reservation-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HomeModule } from '../home/home.module';
 
-@NgModule({
-  declarations: [ReservationFormComponent, ReservationListComponent],
+@NgModule( {
   imports: [
     CommonModule,
     FormsModule,
@@ -15,5 +12,5 @@ import { HomeModule } from '../home/home.module';
     RouterModule,
     HomeModule,
   ],
-})
-export class ReservationModule {}
+} )
+export class BoxModule {}
