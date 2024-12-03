@@ -14,6 +14,10 @@ export class BoxService {
     this.boxes = savedBoxes ? JSON.parse(savedBoxes) : [];
   }
 
+  getBoxCount(): number {
+    return this.boxes.length;
+  }
+
   // CRUD
   getBoxes(): Box[] {
     return this.boxes;

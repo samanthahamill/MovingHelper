@@ -1,0 +1,10 @@
+{
+    "extends": [
+      "plugin:@angular-eslint/recommended",
+      "plugin:@angular-eslint/template/process-inline-templates",
+      "prettier"
+    ],
+    "rules": {
+      // Your custom rules
+    }
+}

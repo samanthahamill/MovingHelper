@@ -1,46 +1,66 @@
+import { RoomType } from "./room";
+
 export interface Box {
   id: string;
   name: string;
-  size: BoxSizes;
+  size: BoxSize;
   description: string;
   roomContents: RoomType;
   image_url: string;
 }
 
-export enum BoxSizes {
-  UNKNOWN, 
-  SMALL,
-  MEDIUM,
-  PICTURE,
-  LARGE,
-  LARGE_PICTURE,
-  X_LARGE,
-  TV
+export enum BoxSize {
+  UNKNOWN = "Unknown Size", 
+  SMALL = "Small",
+  MEDIUM = "Medium",
+  PICTURE = "Picture",
+  LARGE = "Large",
+  LARGE_PICTURE = "Large Picture",
+  X_LARGE = "Extra-Large",
+  TV = "TV",
+  BOOK = "Book",
 }
 
-// TODO eventually don't have this as a enum, or have it as something
-// the user can add other rooms too
-export enum RoomType {
-  UNKNOWN = "unknown",
-  LIVING = "living room",
-  DINING = "dining room",
-  KITCHEN = "kitchen",
-  BEDROOM_1 = "bedroom 1",
-  BEDROOM_2 = "bedroom 2",
-  BEDROOM_3 = "bedroom 3",
-  MASTER_BEDROOM = "master bedroom",
-  MASTER_BATHROOM = "master bathroom",
-  BATHROOM_1 = "bathroom 1",
-  BATHROOM_2 = "bathroom 2",
-  BATHROOM_3 = "bathroom 3",
-  BASEMENT = "basement",
-  ATTIC = "attic",
-  GARAGE = "garage",
-  STORAGE = "storage",
-  LINEN = "linen",
-  CLOSET = "closet",
-  PARLOR = "parlor",
-  FOYER = "foyer",
-  FRONTYARD = "front yard",
-  BACKYARD = "back yard"
+export const boxSizeToNumber = (size: BoxSize): number =>
+{
+  switch(size)
+  {
+    case BoxSize.SMALL:
+      return 0;
+    case BoxSize.BOOK:
+      return 1;
+    case BoxSize.MEDIUM:
+      return 2;
+    case BoxSize.PICTURE:
+      return 3;
+    case BoxSize.LARGE:
+      return 4;
+    case BoxSize.LARGE_PICTURE:
+      return 5;
+    case BoxSize.X_LARGE:
+      return 6;
+    case BoxSize.TV:
+      return 7;
+    case BoxSize.UNKNOWN: 
+    default: 
+      return -1;
+  }
+}
+
+export const boxSizeToUrl = (type: BoxSize): string =>
+{
+    switch(type)
+    {
+      case BoxSize.SMALL:
+      case BoxSize.MEDIUM:
+      case BoxSize.PICTURE:
+      case BoxSize.LARGE:
+      case BoxSize.LARGE_PICTURE:
+      case BoxSize.X_LARGE:
+      case BoxSize.TV:
+      case BoxSize.BOOK:
+      case BoxSize.UNKNOWN: 
+      default: 
+        return "unknown.png";
+    }
 }

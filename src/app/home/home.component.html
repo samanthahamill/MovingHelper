@@ -1,10 +1,12 @@
 <div class="text-center my-5">
   <h2 class="mb-3">Welcome to your moving portal</h2>
 
-  <button class="btn btn-primary mx-2" [routerLink]="['/new']">
+  <button class="btn btn-primary mx-2" [routerLink]="[newBoxPath]">
     Create a new box
   </button>
-  <button class="btn btn-primary mx-2" [routerLink]="['/list']">
-    View all boxes
+  <button class="btn btn-primary mx-2" [routerLink]="[listPath]">
+    View all my boxes
   </button>
 </div>
+
+<router-outlet />

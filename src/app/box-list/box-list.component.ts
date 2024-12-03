@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BoxService } from '../box/box.service';
-import { Box } from '../models/box';
+import { Box, boxSizeToNumber } from '../models/box';
 import { HomeComponent } from '../home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-box-list',
   templateUrl: './box-list.component.html',
   styleUrls: ['./box-list.component.css'],
+  standalone: true,
   imports: [
     HomeComponent, 
     MatSnackBarModule,
@@ -56,11 +57,11 @@ export class BoxListComponent implements OnInit {
 
     if (this.sortOrder === "sizeLowHigh") 
     {
-      this.filteredBoxes.sort((a, b) => a.size - b.size);
+      this.filteredBoxes.sort((a, b) => boxSizeToNumber(a.size) - boxSizeToNumber(b.size));
     } 
     else if (this.sortOrder === "sizeHighLow") 
     {
-      this.filteredBoxes.sort((a, b) => b.size - a.size);
+      this.filteredBoxes.sort((a, b) => boxSizeToNumber(b.size) - boxSizeToNumber(a.size));
     }
     else if (this.sortOrder === "roomAZ") 
     {
