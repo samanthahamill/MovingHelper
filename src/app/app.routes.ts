@@ -10,6 +10,8 @@ const NEW_BOX_PATH = "box";
 export const NEW_BOX_FULL_PATH = "/" + NEW_BOX_PATH;
 const EDIT_BOX_PATH = "edit/:id";
 export const EDIT_BOX_FULL_PATH = "/" + EDIT_BOX_PATH;
+export const NEW_MOVE_FULL = "move";
+export const NEW_MOVE_FULL_PATH = "/" + NEW_MOVE_FULL;
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },

@@ -1,0 +1,15 @@
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.countdown-item {
+    margin: 0 10px;
+    text-align: center;
+}
+
+.countdown-item span {
+    font-size: 2em;
+    font-weight: bold;
+}
