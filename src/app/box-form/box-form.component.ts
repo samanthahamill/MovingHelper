@@ -43,7 +43,7 @@ export class BoxFormComponent implements OnInit {
   ) {
     this.boxForm = this.formatBuilder.group( {
       name: [
-        "Box number " + this.boxService.getBoxCount()
+        "Box number " + ( this.boxService.getBoxCount() + 1 )
       ],
       size: [
         '', Validators.required
@@ -59,7 +59,7 @@ export class BoxFormComponent implements OnInit {
   ngOnInit(): void {
     this.boxForm = this.formatBuilder.group( {
       name: [
-        "Box number " + this.boxService.getBoxCount()
+        "Box number " + ( this.boxService.getBoxCount() + 1 )
       ],
       size: [
         '', Validators.required

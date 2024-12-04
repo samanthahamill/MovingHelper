@@ -6,13 +6,28 @@
     @media (prefers-color-scheme: dark) {
         @include mat.all-component-themes(themes.$dark-theme);
         @include mat.button-theme(themes.$dark-theme);
+    
+        form {
+            // background: lighten(mat.get-theme-color(theme.$dark-theme, surface), 10%);
+            background: lighten(mat.get-theme-color(themes.$dark-theme, surface), 10%);
+            filter: grayscale(50%);
+
+        }
+
+        .btn-primary{
+            background: mat.get-theme-color(themes.$dark-theme, primary, 50);
+            border-color: mat.get-theme-color(themes.$dark-theme, primary, 50);
+        }
+        
+        .btn-secondary{
+            background: mat.get-theme-color(themes.$dark-theme, secondary, 50);
+            border-color: mat.get-theme-color(themes.$dark-theme, secondary, 50);
+        }
+        
+        .btn-tertiary{
+            background: mat.get-theme-color(themes.$dark-theme, tertiary, 50);
+            border-color: mat.get-theme-color(themes.$dark-theme, tertiary, 50);
+        }
     }
 }
 
-form {
-    @media (prefers-color-scheme: dark) {
-        // background: lighten(mat.get-theme-color(theme.$dark-theme, surface), 10%);
-        background: lighten(mat.get-theme-color(themes.$dark-theme, surface), 10%);
-        filter: grayscale(50%);
-    }
-}

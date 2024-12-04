@@ -30,6 +30,7 @@ export class ThemeManagerService {
 
   getStoredTheme = () =>
     JSON.parse( this.browserStorage.get( LOCAL_STORAGE_KEY ) ?? '{}' ).theme;
+
   setStoredTheme = ( theme: string ) => {
     const meta = JSON.parse( this.browserStorage.get( LOCAL_STORAGE_KEY ) ?? '{}' );
     meta.theme = theme;

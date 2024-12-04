@@ -2,7 +2,6 @@ import {
   AfterViewInit,
   Component,
   ViewChild,
-  inject
 } from '@angular/core';
 import {
   NavigationEnd,
@@ -23,7 +22,7 @@ import { PopoutSidenavComponent } from "./components/popout-sidenav/popout-siden
 import { RouterModule } from '@angular/router';
 import { CountdownTimerComponent } from "./components/countdown-timer/countdown-timer.component";
 import { TimerService } from './services/timer/timer.service';
-import { ThemeManagerService } from './services/theme-manager/theme-manager.service';
+import { ThemeToggleComponent } from "./components/theme-toggle/theme-toggle.component";
 
 @Component( {
   selector: 'app-root',
@@ -38,7 +37,8 @@ import { ThemeManagerService } from './services/theme-manager/theme-manager.serv
     MatSidenavModule,
     PopoutSidenavComponent,
     RouterModule,
-    CountdownTimerComponent
+    CountdownTimerComponent,
+    ThemeToggleComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -48,9 +48,7 @@ export class AppComponent implements AfterViewInit {
   @ViewChild( "sidenavContainer", { static: false } )
     sideNavContainer!: MatSidenavContainer;
 
-  themeManagerService = inject( ThemeManagerService );
   title = 'box-app';
-  isDark$ = this.themeManagerService.isDark$;
 
   constructor( protected router: Router, protected timerService: TimerService )
   {
@@ -67,9 +65,5 @@ export class AppComponent implements AfterViewInit {
     setTimeout( () => {
       this.sideNavContainer.updateContentMargins();
     }, 0 );
-  }
-
-  changeTheme( theme: string ) {
-    this.themeManagerService.changeTheme( theme );
   }
 }

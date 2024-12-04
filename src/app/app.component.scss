@@ -14,13 +14,23 @@
 
 .right-hand-buttons{
     text-align: right;
+    display: flex;
+    justify-content: flex-end;
     button {
         margin-left: 10px;
     }
 }
 
+.app-theme-toggle {
+    display: inline-block;
+}
+
 .menu-button {
     text-align: left
+}
+
+.col {
+    width: 20%;
 }
 
 mat-toolbar {
@@ -35,10 +45,6 @@ mat-toolbar {
         clear: both;
         max-width: 100%;
     }
-}
-
-.col {
-    width: 20%;
 }
 
 mat-sidenav-container{

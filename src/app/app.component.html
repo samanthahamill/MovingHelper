@@ -10,24 +10,12 @@
 
     <button class="home-button col" [routerLink]="'/'">Moving Tracker</button>
 
-    <div class="right-hand-buttons col">
-        <mat-menu #themeMenu="matMenu">
-            <button mat-menu-item (click)="changeTheme('auto')">System</button>
-            <button mat-menu-item (click)="changeTheme('light')">Light</button>
-            <button mat-menu-item (click)="changeTheme('dark')">Dark</button>
-        </mat-menu>
-        <button
-            mat-icon-button
-            class="theme-toggle"
-            aria-label="Change theme"
-            [matMenuTriggerFor]="themeMenu"
-        >
-            <mat-icon>{{ (isDark$ | async) === true ? "dark_mode" : "light_mode" }}</mat-icon>
-        </button>
+    <span class="right-hand-buttons col">
+        <app-theme-toggle class="app-theme-toggle"/>
         <button mat-icon-button>
             <mat-icon>account_circle</mat-icon>
         </button>
-    </div>
+    </span>
 </mat-toolbar>  
 
 <mat-sidenav-container #sidenavContainer [hasBackdrop]="true">
