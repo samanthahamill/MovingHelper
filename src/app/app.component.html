@@ -2,18 +2,23 @@
     color="primary" 
     class="mat-elevation-z3"
 >
-    <button mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
-    </button>
-    
-    <span class="spacer">Moving Tracker</span>
+    <div class="col">
+        <button class="menu-button" mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
 
-    <button mat-icon-button [routerLink]="'/'">
-        <mat-icon>home</mat-icon>
-    </button>
+    <button class="home-button col" [routerLink]="'/'">Moving Tracker</button>
+
+    <span class="right-hand-buttons col">
+        <app-theme-toggle class="app-theme-toggle"/>
+        <button mat-icon-button>
+            <mat-icon>account_circle</mat-icon>
+        </button>
+    </span>
 </mat-toolbar>  
-  
-<mat-sidenav-container autosize [hasBackdrop]="true">
+
+<mat-sidenav-container #sidenavContainer [hasBackdrop]="true">
     <mat-sidenav 
         #sidenav
         mode="side" 
@@ -21,8 +26,7 @@
       <app-popout-sidenav/>
     </mat-sidenav>
     <mat-sidenav-content class="content">
-      
-    <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
 

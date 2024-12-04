@@ -1,0 +1,13 @@
+<mat-menu #themeMenu="matMenu">
+    <button mat-menu-item (click)="changeTheme('auto')">System</button>
+    <button mat-menu-item (click)="changeTheme('light')">Light</button>
+    <button mat-menu-item (click)="changeTheme('dark')">Dark</button>
+</mat-menu>
+<button
+    mat-icon-button
+    class="theme-toggle"
+    aria-label="Change theme"
+    [matMenuTriggerFor]="themeMenu"
+>
+    <mat-icon>{{ (isDark$ | async) === true ? "dark_mode" : "light_mode" }}</mat-icon>
+</button>

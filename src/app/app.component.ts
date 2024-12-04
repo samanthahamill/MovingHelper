@@ -1,19 +1,28 @@
 import {
-  AfterViewInit, Component, ViewChild
+  AfterViewInit,
+  Component,
+  ViewChild,
 } from '@angular/core';
 import {
-  NavigationEnd, Router, RouterOutlet
+  NavigationEnd,
+  Router,
+  RouterOutlet
 } from '@angular/router';
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
-import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
+import {
+  MatSidenav,
+  MatSidenavContainer,
+  MatSidenavModule
+} from '@angular/material/sidenav';
 import { CommonModule } from '@angular/common';
 import { PopoutSidenavComponent } from "./components/popout-sidenav/popout-sidenav.component";
 import { RouterModule } from '@angular/router';
 import { CountdownTimerComponent } from "./components/countdown-timer/countdown-timer.component";
-import { TimerService } from './services/timer.service';
+import { TimerService } from './services/timer/timer.service';
+import { ThemeToggleComponent } from "./components/theme-toggle/theme-toggle.component";
 
 @Component( {
   selector: 'app-root',
@@ -28,15 +37,16 @@ import { TimerService } from './services/timer.service';
     MatSidenavModule,
     PopoutSidenavComponent,
     RouterModule,
-    CountdownTimerComponent
+    CountdownTimerComponent,
+    ThemeToggleComponent
   ],
   templateUrl: './app.component.html',
-  styleUrls: [
-    './app.component.css', '../styles.css'
-  ],
+  styleUrl: './app.component.scss'
 } )
 export class AppComponent implements AfterViewInit {
   @ViewChild( "sidenav" ) sidenav!: MatSidenav;
+  @ViewChild( "sidenavContainer", { static: false } )
+    sideNavContainer!: MatSidenavContainer;
 
   title = 'box-app';
 
@@ -50,5 +60,10 @@ export class AppComponent implements AfterViewInit {
         this.sidenav.close();
       }
     } );
+
+    // calling updateContentMargins on next tick, fixes the spacing.
+    setTimeout( () => {
+      this.sideNavContainer.updateContentMargins();
+    }, 0 );
   }
 }

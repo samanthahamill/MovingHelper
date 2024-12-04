@@ -1,32 +1,44 @@
-<h3 class="mt-5 mt-3">Box List</h3>
-<button disabled="boxes.length == 0" class="btn btn-small btn-danger" (click)="deleteAllBoxes()">
-  Delete All
-</button>
-
 <div class="container">
-    <h2> Our latest collection </h2>
+    <div class="header">
+        <h2> Your Current Boxes </h2>
+        <button 
+            disabled="boxes.length == 0" 
+            class="btn btn-small btn-danger delete-all-button" 
+            (click)="deleteAllBoxes()"
+        >
+            Delete All
+        </button>
+    </div>
 
-    <mat-form-field>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Search Name"/>
+    <mat-form-field appearance="fill" class="search-bar">
+        <mat-label>Search Boxes</mat-label>
+        <input matInput (keyup)="applyFilter($event)"/>
+        <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
 
+    <!-- TODO turn into a dropdown for "advanced" search -->
     <mat-form-field class="sort-dropdown">
-        <mat-select (selectionChange)="sortProducts($event.value)" placeholder="Sort"> 
-            <mat-option value="sizeLowHigh">Size: Low to High</mat-option>
-            <mat-option value="sizeHighLow">Size: High to Low</mat-option>
-            <mat-option value="roomAZ">Room: A-Z</mat-option>
-            <mat-option value="roomZA">Room: Z-A</mat-option>
+        <mat-select 
+            (selectionChange)="sortProducts($event.value)" 
+            placeholder="Sort"
+            value="{{sortOrder}}"> 
+            <mat-option 
+                *ngFor="let sortType of sortOptions" 
+                value="{{sortType}}"
+            >
+            {{sortType}}
+        </mat-option>
         </mat-select>
     </mat-form-field>
 
-    <div fxLayout="row wrap" fxLayoutGap="50px grid">
-        <div *ngFor="let box of filteredBoxes">
+    <div class="grid-container">
+        <div class="col" *ngFor="let box of filteredBoxes">
             <mat-card class="box-card"> 
             <!-- TODO add onClick that takes to a different page -->
             <!-- (click)="addToCart(box)"> -->
                 <img 
                     mat-card-image src="./../../assets/images/{{box.image_url}}" 
-                    alt = "Could not find image"
+                    alt="Could not find image"
                 >
                 <mat-card-content>
                     <mat-card-title>{{box.name}}</mat-card-title>

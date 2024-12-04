@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
   imports: [
   ],
   templateUrl: './countdown-timer.component.html',
-  styleUrl: './countdown-timer.component.css'
+  styleUrl: './countdown-timer.component.scss'
 } )
 export class CountdownTimerComponent implements OnInit, OnDestroy {
   @Input() targetDate!: Date;

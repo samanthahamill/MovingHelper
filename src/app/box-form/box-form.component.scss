@@ -1,3 +1,5 @@
+@use "@angular/material" as mat;
+
 .text-danger{
     color: red
 }
@@ -8,6 +10,6 @@
 
 form {
     margin: 20px;
-    padding: 10px;
-    background-color: goldenrod;
+    padding: 15px;
+    border-radius: 20px;
 }

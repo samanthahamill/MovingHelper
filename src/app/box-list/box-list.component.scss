@@ -1,0 +1,91 @@
+.button-div {
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.grid-container:after {
+    content: "";
+    display: table;
+    clear: both;
+    max-width: 100%;
+}
+
+.col {
+    float: left;
+    width: 20%;
+    padding: 10px;
+}
+
+.box-card {
+    width: 200px;
+    height: 280px;
+    align-items: center;
+    text-overflow: ellipsis;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .col {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .col {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .col {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .col {
+        width: 100%;
+    }
+    .box-card{
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+mat-card-title{
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+mat-card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+mat-card {
+    transition: transform .2s;
+}
+
+.delete-all-button {
+    margin-bottom: 10px;
+}
+
+.header {
+    align-content: center;
+    text-align: center;
+}
+
+.search-bar {
+    width: 100%;
+}
+
+img{
+    max-height: 50%;
+}
+
+.mat-input-element {
+    line-height: normal !important;
+}

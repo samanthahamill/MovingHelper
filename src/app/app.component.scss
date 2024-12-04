@@ -1,0 +1,63 @@
+@use "../styles/base";
+
+.icon-button-wrapper{
+    background-color: transparent;
+}
+
+.content{
+    padding: "24px"
+}
+
+.home-button {
+    background-color: transparent;
+}
+
+.right-hand-buttons{
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    button {
+        margin-left: 10px;
+    }
+}
+
+.app-theme-toggle {
+    display: inline-block;
+}
+
+.menu-button {
+    text-align: left
+}
+
+.col {
+    width: 20%;
+}
+
+mat-toolbar {
+    justify-content: space-between;
+    position: relative;
+    z-index: 5;
+    height: "64px";
+
+    ::after{
+        content: "";
+        display: table;
+        clear: both;
+        max-width: 100%;
+    }
+}
+
+mat-sidenav-container{
+    height: calc(100vh - 60px);
+    width: "25%";
+}
+
+router-outlet{
+    height: 0px;
+}
+    
+@media screen and (max-width: 600px) {
+    mat-sidenav-container{
+        width: 100%;
+    };
+}
