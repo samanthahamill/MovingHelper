@@ -1,30 +1,30 @@
 @use '@angular/material' as mat;
 @use './base' as themes;
 
-
 /* SPECIFIC STYLING */
 :root {
   @media (prefers-color-scheme: light) {
-    @include mat.all-component-themes(themes.$light-theme);
-    form {
-      // background: lighten(mat.get-theme-color(theme.$dark-theme, surface), 10%);
-      background: darken(mat.get-theme-color(themes.$light-theme, surface), 10%);
-      filter: grayscale(50%);
-    }
+      @include mat.all-component-themes(themes.$light-theme);
+      @include mat.button-theme(themes.$light-theme);
+  
+      form {
+          background: lighten(mat.get-theme-color(themes.$light-theme, surface), 10%);
+          filter: grayscale(50%);
+      }
 
-    .btn-primary{
-      background: mat.get-theme-color(themes.$light-theme, primary, 50);
-      border-color: mat.get-theme-color(themes.$light-theme, primary, 50);
-    }
-
-    .btn-secondary{
-      background: mat.get-theme-color(themes.$light-theme, secondary, 50);
-      border-color: mat.get-theme-color(themes.$light-theme, secondary, 50);
-    }
-
-    .btn-tertiary{
-      background: mat.get-theme-color(themes.$light-theme, tertiary, 50);
-      border-color: mat.get-theme-color(themes.$light-theme, tertiary, 50);
-    }
+      .btn-primary{
+          background: mat.get-theme-color(themes.$light-theme, primary, 50);
+          border-color: mat.get-theme-color(themes.$light-theme, primary, 50);
+      }
+      
+      .btn-secondary{
+          background: mat.get-theme-color(themes.$light-theme, secondary, 50);
+          border-color: mat.get-theme-color(themes.$light-theme, secondary, 50);
+      }
+      
+      .btn-tertiary{
+          background: mat.get-theme-color(themes.$light-theme, tertiary, 50);
+          border-color: mat.get-theme-color(themes.$light-theme, tertiary, 50);
+      }
   }
 }

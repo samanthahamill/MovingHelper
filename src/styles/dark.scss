@@ -8,10 +8,8 @@
         @include mat.button-theme(themes.$dark-theme);
     
         form {
-            // background: lighten(mat.get-theme-color(theme.$dark-theme, surface), 10%);
             background: lighten(mat.get-theme-color(themes.$dark-theme, surface), 10%);
             filter: grayscale(50%);
-
         }
 
         .btn-primary{
