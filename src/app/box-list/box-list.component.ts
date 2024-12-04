@@ -22,9 +22,7 @@ export enum SortOptions {
 @Component( {
   selector: 'app-box-list',
   templateUrl: './box-list.component.html',
-  styleUrls: [
-    './box-list.component.scss'
-  ],
+  styleUrls: [ './box-list.component.scss' ],
   standalone: true,
   imports: [
     MatSnackBarModule,

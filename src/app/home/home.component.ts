@@ -8,7 +8,7 @@ import {
 } from '../app.routes';
 import { CountdownTimerComponent } from "../components/countdown-timer/countdown-timer.component";
 import { NgIf } from '@angular/common';
-import { TimerService } from '../services/timer.service';
+import { TimerService } from '../services/timer/timer.service';
 
 @Component( {
   selector: 'app-home',

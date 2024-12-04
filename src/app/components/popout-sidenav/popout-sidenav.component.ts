@@ -34,5 +34,4 @@ export class PopoutSidenavComponent {
       route: NEW_BOX_FULL_PATH
     },
   ] )
-
 }

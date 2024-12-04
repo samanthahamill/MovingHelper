@@ -1,70 +1,12 @@
 @use '@angular/material' as mat;
-/* You can add global styles to this file, and also import other style files */
-@import "../node_modules/bootstrap/scss/bootstrap";
+@use './styles/base' as themes;
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
-$dark-theme: mat.define-theme((
-  color: (
-    theme-type: dark,
-    primary: mat.$violet-palette,
-  ),
-  typography: (
-    brand-family: 'Comic Sans',
-    bold-weight: 900
-  ),
-  density: (
-    scale: -1
-  )
-));
+@include mat.core();
 
-$light-theme: mat.define-theme((
-  color: (
-    theme-type: light,
-    primary: mat.$violet-palette,
-  ),
-  typography: (
-    brand-family: 'Comic Sans',
-    bold-weight: 900
-  ),
-  density: (
-    scale: -1
-  )
-));
+@include mat.all-component-themes(themes.$light-theme);
 
-html, body { 
-    height: 100%;
-    /* 
-     * TODO this is a hack to stop the second scrollbar of 1px. 
-     * Eventually should fix 
-     */ 
-    overflow-y: hidden; 
-}
-
-body { 
-    margin: 0; 
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-color: rgb(223, 222, 210);
-}
-
-.container{
-    padding: 50px;
-    max-width: 1200px;
-    margin: auto; /* horizontally centered */
-}
-
-.container-sm{
-    padding: 50px;
-    max-width: 800px;
-    margin: auto; /* horizontally centered */
-}
-
-.text-center{
-    text-align: center;
-}
-
-.text-right{
-    text-align: right;
-}
-
-.text-left{
-    text-align: left;
-}
+/* @include mat.core-theme(themes.$light-theme);
+ @include mat.icon-theme(themes.$light-theme);
+ @include mat.menu-theme(themes.$light-theme);
+ */

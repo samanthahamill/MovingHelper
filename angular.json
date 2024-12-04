@@ -25,7 +25,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "src/styles/light.scss",
+                "inject": false,
+                "bundleName": "light-theme"
+              },
+              {
+                "input": "src/styles/dark.scss",
+                "inject": false,
+                "bundleName": "dark-theme"
+              }
             ],
             "scripts": []
           },
@@ -87,7 +97,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "src/styles/light.scss",
+                "inject": false,
+                "bundleName": "light-theme"
+              },
+              {
+                "input": "src/styles/dark.scss",
+                "inject": false,
+                "bundleName": "dark-theme"
+              }
             ],
             "scripts": []
           }
