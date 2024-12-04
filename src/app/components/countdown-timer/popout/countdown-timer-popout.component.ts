@@ -3,7 +3,6 @@ import { CountdownTimerComponent } from '../countdown-timer.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { CommonModule } from '@angular/common';
 import { TimerService } from '../../../services/timer/timer.service';
 
 @Component( {
@@ -11,7 +10,6 @@ import { TimerService } from '../../../services/timer/timer.service';
   standalone: true,
   imports: [
     CountdownTimerComponent,
-    CommonModule,
     MatIconModule,
     MatButtonModule,
     MatMenuModule
@@ -20,8 +18,5 @@ import { TimerService } from '../../../services/timer/timer.service';
   styleUrl: "./countdown-timer-popout.component.scss"
 } )
 export class CountdownTimerPopoutComponent  {
-  constructor( protected timerService: TimerService )
-  {
-
-  }
+  constructor( protected timerService: TimerService ) { }
 }
