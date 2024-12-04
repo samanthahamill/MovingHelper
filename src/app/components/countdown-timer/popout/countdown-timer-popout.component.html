@@ -1,0 +1,14 @@
+<mat-menu #timerPopout="matMenu" class="mat-elevation-z3">
+    <div class="content">
+        <h4> Days Until Move: </h4>
+        <app-countdown-timer class="timer" [targetDate]="timerService.getTargetDate()"/>
+    </div>
+</mat-menu>
+<button
+    mat-icon-button
+    class="timer-toggle"
+    aria-label="Show Timer"
+    [matMenuTriggerFor]="timerPopout"
+>
+    <mat-icon>timer</mat-icon>
+</button>

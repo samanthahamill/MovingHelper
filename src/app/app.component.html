@@ -11,7 +11,8 @@
     <button class="home-button col" [routerLink]="'/'">Moving Tracker</button>
 
     <span class="right-hand-buttons col">
-        <app-theme-toggle class="app-theme-toggle"/>
+        <app-countdown-timer-popout *ngIf="router.url !== '/'"/>
+        <app-theme-toggle/>
         <button mat-icon-button>
             <mat-icon>account_circle</mat-icon>
         </button>

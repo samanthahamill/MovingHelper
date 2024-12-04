@@ -23,6 +23,7 @@ import { RouterModule } from '@angular/router';
 import { CountdownTimerComponent } from "./components/countdown-timer/countdown-timer.component";
 import { TimerService } from './services/timer/timer.service';
 import { ThemeToggleComponent } from "./components/theme-toggle/theme-toggle.component";
+import { CountdownTimerPopoutComponent } from "./components/countdown-timer/popout/countdown-timer-popout.component";
 
 @Component( {
   selector: 'app-root',
@@ -38,7 +39,8 @@ import { ThemeToggleComponent } from "./components/theme-toggle/theme-toggle.com
     PopoutSidenavComponent,
     RouterModule,
     CountdownTimerComponent,
-    ThemeToggleComponent
+    ThemeToggleComponent,
+    CountdownTimerPopoutComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
