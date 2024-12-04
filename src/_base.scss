@@ -1,0 +1,12 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #f3e8c8;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+
+button {
+  background-color: rgb(211, 164, 103);
+}

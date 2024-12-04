@@ -34,7 +34,8 @@ import { TimerService } from './services/timer.service';
   ],
   templateUrl: './app.component.html',
   styleUrls: [
-    './app.component.css', '../styles.css'
+    './app.component.scss',
+    '../styles.scss'
   ],
 } )
 export class AppComponent implements AfterViewInit {

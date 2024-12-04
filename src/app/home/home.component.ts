@@ -18,7 +18,7 @@ import { TimerService } from '../services/timer.service';
   ],
   templateUrl: './home.component.html',
   styleUrls: [
-    './home.component.css'
+    './home.component.scss'
   ]
 } )
 export class HomeComponent {

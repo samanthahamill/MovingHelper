@@ -19,7 +19,7 @@ export type MenuItem = {
     MatListModule, MatIconModule, NgFor, RouterModule
   ],
   templateUrl: './popout-sidenav.component.html',
-  styleUrl: './popout-sidenav.component.css'
+  styleUrl: './popout-sidenav.component.scss'
 } )
 export class PopoutSidenavComponent {
   menuItems = signal<Array<MenuItem>>( [

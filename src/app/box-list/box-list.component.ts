@@ -23,7 +23,7 @@ export enum SortOptions {
   selector: 'app-box-list',
   templateUrl: './box-list.component.html',
   styleUrls: [
-    './box-list.component.css'
+    './box-list.component.scss'
   ],
   standalone: true,
   imports: [
@@ -40,7 +40,7 @@ export class BoxListComponent implements OnInit {
   boxes: Array<Box> = [];
   filteredBoxes: Array<Box> = [];
   sortOrder: SortOptions = SortOptions.NAME_LOW_HIGH;
-  sortOptions: Array<SortOptions> = Object.values(SortOptions);
+  sortOptions: Array<SortOptions> = Object.values( SortOptions );
 
   constructor( private boxService: BoxService ) {}
 
@@ -99,7 +99,7 @@ export class BoxListComponent implements OnInit {
       case SortOptions.NAME_LOW_HIGH:
         this.filteredBoxes.sort( ( a, b ) => b.name.localeCompare( a.name ) );
         break;
-      default: 
+      default:
         break;
     }
   }

@@ -18,7 +18,7 @@ import { RoomType } from '../models/room';
   selector: 'app-box-form',
   templateUrl: './box-form.component.html',
   styleUrls: [
-    './box-form.component.css'
+    './box-form.component.scss'
   ],
   standalone: true,
   imports: [

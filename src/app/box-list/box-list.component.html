@@ -10,12 +10,13 @@
         </button>
     </div>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="search-bar">
         <mat-label>Search Boxes</mat-label>
         <input matInput (keyup)="applyFilter($event)"/>
         <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
 
+    <!-- TODO turn into a dropdown for "advanced" search -->
     <mat-form-field class="sort-dropdown">
         <mat-select 
             (selectionChange)="sortProducts($event.value)" 

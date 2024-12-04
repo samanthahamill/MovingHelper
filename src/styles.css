@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
-@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 html, body { 
     height: 100%;
@@ -14,7 +13,11 @@ html, body {
 body { 
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-color: rgb(244, 244, 244);
+    background-color: rgb(223, 222, 210);
+}
+
+.button {
+    background-color: rgb(211, 164, 103);
 }
 
 .container{
