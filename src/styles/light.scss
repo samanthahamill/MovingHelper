@@ -6,9 +6,13 @@
 :root {
   @media (prefers-color-scheme: light) {
     @include mat.all-component-themes(themes.$light-theme);
-  /**
-  @include mat.core-color(themes.$light-theme);
-    @include mat.button-color(themes.$light-theme);
-  */
+  }
+}
+
+form {
+  @media (prefers-color-scheme: light) {
+      // background: lighten(mat.get-theme-color(theme.$dark-theme, surface), 10%);
+      background: darken(mat.get-theme-color(themes.$light-theme, surface), 30%);
+      filter: grayscale(50%);
   }
 }

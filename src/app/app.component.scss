@@ -13,9 +13,14 @@
 }
 
 .right-hand-buttons{
+    text-align: right;
     button {
         margin-left: 10px;
     }
+}
+
+.menu-button {
+    text-align: left
 }
 
 mat-toolbar {
@@ -23,6 +28,17 @@ mat-toolbar {
     position: relative;
     z-index: 5;
     height: "64px";
+
+    ::after{
+        content: "";
+        display: table;
+        clear: both;
+        max-width: 100%;
+    }
+}
+
+.col {
+    width: 20%;
 }
 
 mat-sidenav-container{

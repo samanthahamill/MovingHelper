@@ -2,13 +2,15 @@
     color="primary" 
     class="mat-elevation-z3"
 >
-    <button mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
-    </button>
-    
-    <button class="home-button" [routerLink]="'/'">Moving Tracker</button>
+    <div class="col">
+        <button class="menu-button" mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
 
-    <div class="right-hand-buttons">
+    <button class="home-button col" [routerLink]="'/'">Moving Tracker</button>
+
+    <div class="right-hand-buttons col">
         <mat-menu #themeMenu="matMenu">
             <button mat-menu-item (click)="changeTheme('auto')">System</button>
             <button mat-menu-item (click)="changeTheme('light')">Light</button>

@@ -5,8 +5,14 @@
 :root {
     @media (prefers-color-scheme: dark) {
         @include mat.all-component-themes(themes.$dark-theme);
-        /*   @include mat.core-theme(themes.$dark-theme);
-            @include mat.button-theme(themes.$dark-theme);
-        */ 
+        @include mat.button-theme(themes.$dark-theme);
+    }
+}
+
+form {
+    @media (prefers-color-scheme: dark) {
+        // background: lighten(mat.get-theme-color(theme.$dark-theme, surface), 10%);
+        background: lighten(mat.get-theme-color(themes.$dark-theme, surface), 10%);
+        filter: grayscale(50%);
     }
 }
