@@ -6,29 +6,25 @@
         <mat-icon>menu</mat-icon>
     </button>
     
-    <span class="spacer">Moving Tracker</span>
+    <button class="home-button" [routerLink]="'/'">Moving Tracker</button>
 
-    <button mat-icon-button [routerLink]="'/'">
-        <mat-icon>home</mat-icon>
-    </button>
-    
-    <button
-        mat-icon-button
-        class="theme-toggle"
-        aria-label="Change theme"
-        [matMenuTriggerFor]="themeMenu"
-    >
-        <mat-icon>{{ (isDark$ | async) === true ? "dark_mode" : "light_mode" }}</mat-icon>
-    </button>
-    <mat-menu #themeMenu="matMenu">
-        <button mat-menu-item (click)="changeTheme('auto')">System</button>
-        <button mat-menu-item (click)="changeTheme('light')">Light</button>
-        <button mat-menu-item (click)="changeTheme('dark')">Dark</button>
-    </mat-menu>
-    <div class="demo-buttons">
-        <button mat-raised-button color="primary">Raised</button>
-        <button mat-raised-button color="accent">Accent</button>
-        <button mat-raised-button color="warn">Warn</button>
+    <div class="right-hand-buttons">
+        <mat-menu #themeMenu="matMenu">
+            <button mat-menu-item (click)="changeTheme('auto')">System</button>
+            <button mat-menu-item (click)="changeTheme('light')">Light</button>
+            <button mat-menu-item (click)="changeTheme('dark')">Dark</button>
+        </mat-menu>
+        <button
+            mat-icon-button
+            class="theme-toggle"
+            aria-label="Change theme"
+            [matMenuTriggerFor]="themeMenu"
+        >
+            <mat-icon>{{ (isDark$ | async) === true ? "dark_mode" : "light_mode" }}</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>account_circle</mat-icon>
+        </button>
     </div>
 </mat-toolbar>  
 

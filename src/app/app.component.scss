@@ -1,11 +1,21 @@
 @use "../styles/base";
 
 .icon-button-wrapper{
-    background-color: "transparent";
+    background-color: transparent;
 }
 
 .content{
     padding: "24px"
+}
+
+.home-button {
+    background-color: transparent;
+}
+
+.right-hand-buttons{
+    button {
+        margin-left: 10px;
+    }
 }
 
 mat-toolbar {
