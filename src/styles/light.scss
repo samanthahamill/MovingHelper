@@ -8,7 +8,7 @@
       @include mat.button-theme(themes.$light-theme);
   
       form {
-          background: lighten(mat.get-theme-color(themes.$light-theme, surface), 10%);
+          background: darken(mat.get-theme-color(themes.$light-theme, surface), 10%);
           filter: grayscale(50%);
       }
 

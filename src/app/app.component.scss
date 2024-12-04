@@ -16,13 +16,9 @@
     text-align: right;
     display: flex;
     justify-content: flex-end;
-    button {
-        margin-left: 10px;
+    > * {
+        margin-left: 5px;
     }
-}
-
-.app-theme-toggle {
-    display: inline-block;
 }
 
 .menu-button {
