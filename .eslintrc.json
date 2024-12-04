@@ -34,6 +34,11 @@
             "style": "kebab-case"
           }
         ],
+        "indent": [ "error", 2, {
+          "SwitchCase": 1,
+          "MemberExpression": 1,
+          "FunctionDeclaration": {"parameters": "first"}
+        } ],
         "newline-per-chained-call": ["error", {
           "ignoreChainWithDepth": 2
         }],
@@ -52,8 +57,7 @@
         "object-curly-spacing": ["error", "always"],
         "object-property-newline": "error",
         "space-before-function-paren": ["error", "never"],
-        "space-in-parens": [ "error", "always" ],
-        "indent": ["error", 2]
+        "space-in-parens": [ "error", "always" ]
       }
     },
     {

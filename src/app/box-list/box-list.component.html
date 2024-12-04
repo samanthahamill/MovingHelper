@@ -17,11 +17,16 @@
     </mat-form-field>
 
     <mat-form-field class="sort-dropdown">
-        <mat-select (selectionChange)="sortProducts($event.value)" placeholder="Sort"> 
-            <mat-option value="sizeLowHigh">Size: Low to High</mat-option>
-            <mat-option value="sizeHighLow">Size: High to Low</mat-option>
-            <mat-option value="roomAZ">Room: A-Z</mat-option>
-            <mat-option value="roomZA">Room: Z-A</mat-option>
+        <mat-select 
+            (selectionChange)="sortProducts($event.value)" 
+            placeholder="Sort"
+            value="{{sortOrder}}"> 
+            <mat-option 
+                *ngFor="let sortType of sortOptions" 
+                value="{{sortType}}"
+            >
+            {{sortType}}
+        </mat-option>
         </mat-select>
     </mat-form-field>
 
