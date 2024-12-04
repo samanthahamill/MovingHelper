@@ -12,8 +12,8 @@
         <mat-icon>home</mat-icon>
     </button>
 </mat-toolbar>  
-  
-<mat-sidenav-container autosize [hasBackdrop]="true">
+
+<mat-sidenav-container #sidenavContainer [hasBackdrop]="true">
     <mat-sidenav 
         #sidenav
         mode="side" 
@@ -21,8 +21,7 @@
       <app-popout-sidenav/>
     </mat-sidenav>
     <mat-sidenav-content class="content">
-      
-    <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
 

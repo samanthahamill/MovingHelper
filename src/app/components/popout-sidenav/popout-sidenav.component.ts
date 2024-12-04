@@ -22,7 +22,6 @@ export type MenuItem = {
   styleUrl: './popout-sidenav.component.css'
 } )
 export class PopoutSidenavComponent {
-
   menuItems = signal<Array<MenuItem>>( [
     {
       icon: "dashboard",

@@ -16,7 +16,7 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
-        "array-bracket-newline": ["error", "always"],
+        "array-bracket-newline": ["error", "consistent"],
         "array-bracket-spacing": ["error", "always"],
         "@angular-eslint/directive-selector": [
           "error",

@@ -2,14 +2,20 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 
-html, body { height: 100%; }
+html, body { 
+    height: 100%;
+    /* 
+     * TODO this is a hack to stop the second scrollbar of 1px. 
+     * Eventually should fix 
+     */ 
+    overflow-y: hidden; 
+}
 
 body { 
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif;
     background-color: rgb(244, 244, 244);
 }
-
 
 .container{
     padding: 50px;

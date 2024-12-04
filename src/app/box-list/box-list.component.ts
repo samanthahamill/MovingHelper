@@ -4,6 +4,7 @@ import { Box, boxSizeToNumber } from '../models/box';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -21,14 +22,13 @@ import { RouterModule } from '@angular/router';
     MatInputModule,
     MatCardModule,
     CommonModule,
-    RouterModule
+    RouterModule,
+    MatIconModule
   ]
 } )
 export class BoxListComponent implements OnInit {
-  boxes: Array<Box> = [
-  ];
-  filteredBoxes: Array<Box> = [
-  ];
+  boxes: Array<Box> = [];
+  filteredBoxes: Array<Box> = [];
   sortOrder: string = "";
 
   constructor( private boxService: BoxService ) {}

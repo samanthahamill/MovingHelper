@@ -8,7 +8,9 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
-import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
+import {
+  MatSidenav, MatSidenavContainer, MatSidenavModule
+} from '@angular/material/sidenav';
 import { CommonModule } from '@angular/common';
 import { PopoutSidenavComponent } from "./components/popout-sidenav/popout-sidenav.component";
 import { RouterModule } from '@angular/router';
@@ -37,6 +39,8 @@ import { TimerService } from './services/timer.service';
 } )
 export class AppComponent implements AfterViewInit {
   @ViewChild( "sidenav" ) sidenav!: MatSidenav;
+  @ViewChild( "sidenavContainer", { static: false } )
+    sideNavContainer!: MatSidenavContainer;
 
   title = 'box-app';
 
@@ -50,5 +54,10 @@ export class AppComponent implements AfterViewInit {
         this.sidenav.close();
       }
     } );
+
+    // calling updateContentMargins on next tick, fixes the spacing.
+    setTimeout( () => {
+      this.sideNavContainer.updateContentMargins();
+    }, 0 );
   }
 }
