@@ -2,9 +2,11 @@
 @use "./base" as themes;
 
 /* SPECIFIC STYLING */
-@media (prefers-color-scheme: dark) {
-    @include mat.all-component-themes(themes.$dark-theme);
-/*   @include mat.core-theme(themes.$dark-theme);
-    @include mat.button-theme(themes.$dark-theme);
-*/ 
+:root {
+    @media (prefers-color-scheme: dark) {
+        @include mat.all-component-themes(themes.$dark-theme);
+        /*   @include mat.core-theme(themes.$dark-theme);
+            @include mat.button-theme(themes.$dark-theme);
+        */ 
+    }
 }

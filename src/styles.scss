@@ -1,11 +1,13 @@
 @use '@angular/material' as mat;
 @use './styles/base' as themes;
-@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/bootstrap";
 
 @include mat.core();
 
-@include mat.all-component-themes(themes.$light-theme);
 
+:root {
+    @include mat.all-component-themes(themes.$light-theme);
+}
 /* @include mat.core-theme(themes.$light-theme);
  @include mat.icon-theme(themes.$light-theme);
  @include mat.menu-theme(themes.$light-theme);

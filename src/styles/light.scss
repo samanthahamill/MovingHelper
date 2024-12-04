@@ -3,10 +3,12 @@
 
 
 /* SPECIFIC STYLING */
-@media (prefers-color-scheme: light) {
-  @include mat.all-component-themes(themes.$light-theme);
-/**
- @include mat.core-color(themes.$light-theme);
-  @include mat.button-color(themes.$light-theme);
-*/
+:root {
+  @media (prefers-color-scheme: light) {
+    @include mat.all-component-themes(themes.$light-theme);
+  /**
+  @include mat.core-color(themes.$light-theme);
+    @include mat.button-color(themes.$light-theme);
+  */
+  }
 }
