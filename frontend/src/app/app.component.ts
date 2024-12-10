@@ -50,7 +50,7 @@ export class AppComponent implements AfterViewInit {
   @ViewChild( "sidenavContainer", { static: false } )
     sideNavContainer!: MatSidenavContainer;
 
-  title = 'box-app';
+  title = 'moving-app';
 
   constructor( protected router: Router, protected timerService: TimerService )
   {
