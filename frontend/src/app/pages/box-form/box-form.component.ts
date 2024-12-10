@@ -2,17 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder, FormGroup, Validators, ReactiveFormsModule
 } from '@angular/forms';
-import { BoxService } from '../box/box.service';
+import { BoxService } from '../../box/box.service';
 import {
-  Box, BoxSize, boxSizeToUrl
-} from '../models/box';
+  Box, 
+  BoxSize, 
+  boxSizeToUrl
+} from '../../models/box';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CommonModule } from '@angular/common';
-import { RoomType } from '../models/room';
+import { RoomType } from '../../models/room';
 
 @Component( {
   selector: 'app-box-form',

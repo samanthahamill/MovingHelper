@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { BoxFormComponent } from './box-form/box-form.component';
-import { BoxListComponent } from './box-list/box-list.component';
+import { HomeComponent } from './pages/home/home.component';
+import { BoxFormComponent } from './pages/box-form/box-form.component';
+import { BoxListComponent } from './pages/box-list/box-list.component';
 
 const LIST_PATH = "list";
 export const LIST_FULL_PATH = "/" + LIST_PATH;

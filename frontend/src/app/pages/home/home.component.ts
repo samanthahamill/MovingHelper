@@ -5,10 +5,10 @@ import {
   EDIT_BOX_FULL_PATH,
   LIST_FULL_PATH,
   NEW_MOVE_FULL_PATH
-} from '../app.routes';
-import { CountdownTimerComponent } from "../components/countdown-timer/countdown-timer.component";
+} from '../../app.routes';
+import { CountdownTimerComponent } from "../../components/countdown-timer/countdown-timer.component";
 import { NgIf } from '@angular/common';
-import { TimerService } from '../services/timer/timer.service';
+import { TimerService } from '../../services/timer/timer.service';
 
 @Component( {
   selector: 'app-home',
