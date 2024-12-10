@@ -1,17 +1,24 @@
+// start with 'node server.js'
+
 const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-
 const app = express();
-const port = 3001;
 
-app.use(cors()); // Enable CORS for all origins
-app.use(bodyParser.json());
-
-app.get('/', (req, res) => {
-  res.send('Hello from Express!');
+// handling CORS
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", 
+              // only allow incoming requests from this URL
+               "http://localhost:4200");
+    res.header("Access-Control-Allow-Headers", 
+               "Origin, X-Requested-With, Content-Type, Accept");
+    next();
 });
 
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+// route for handling requests from the Angular client
+app.get('/api/message', (req, res) => {
+    res.json({ message: 
+            'This is a default Express server. Change to actually return items!!' });
 });
+
+const PORT = 3001;
+
+app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));

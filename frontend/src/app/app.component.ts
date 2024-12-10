@@ -24,6 +24,7 @@ import { CountdownTimerComponent } from "./components/countdown-timer/countdown-
 import { TimerService } from './services/timer/timer.service';
 import { ThemeToggleComponent } from "./components/theme-toggle/theme-toggle.component";
 import { CountdownTimerPopoutComponent } from "./components/countdown-timer/popout/countdown-timer-popout.component";
+import { ApiService } from './services/api/api.service';
 
 @Component( {
   selector: 'app-root',
@@ -51,9 +52,19 @@ export class AppComponent implements AfterViewInit {
     sideNavContainer!: MatSidenavContainer;
 
   title = 'moving-app';
+  posts:any;
 
-  constructor( protected router: Router, protected timerService: TimerService )
+  constructor( protected router: Router, 
+    protected timerService: TimerService,
+  private service: ApiService )
   {
+  }
+
+  ngOnInit() {
+    this.service.getDefaultMessage().subscribe(response => {
+      this.posts=response;
+      console.log(response);
+    })
   }
 
   ngAfterViewInit() {
