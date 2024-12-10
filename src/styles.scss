@@ -4,18 +4,19 @@
 
 @include mat.core();
 
+// Default light theme
 :root {
     @include mat.all-component-themes(themes.$light-theme);
 }
 
 body {
     font: 100% themes.$font-stack;
-    color: themes.$primary-color;
 }
 
 button {
     outline-color: transparent;
     border-color: transparent;
+    color: darkslategrey;
 }
 
 html, body { 
@@ -54,4 +55,30 @@ body {
 
 .text-left{
     text-align: left;
+}
+
+form {
+    background: darken(mat.get-theme-color(themes.$light-theme, surface), 10%);
+    filter: grayscale(50%);
+}
+
+
+.btn-primary{
+    background-color: mat.get-theme-color(themes.$light-theme, primary, 80);
+    border-color: mat.get-theme-color(themes.$light-theme, primary, 80);
+    color: rgb(25, 36, 25);
+    :hover {
+        background-color: mat.get-theme-color(themes.$light-theme, primary, 70);
+        border-color: mat.get-theme-color(themes.$light-theme, primary, 70);
+    } 
+}
+
+.btn-secondary{
+    background-color: mat.get-theme-color(themes.$light-theme, secondary, 80);
+    border-color: mat.get-theme-color(themes.$light-theme, secondary, 80);
+}
+
+.btn-tertiary{
+    background-color: mat.get-theme-color(themes.$light-theme, tertiary, 80);
+    border-color: mat.get-theme-color(themes.$light-theme, tertiary, 80);
 }
