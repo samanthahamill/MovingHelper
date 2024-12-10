@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Box } from '../models/box';
+import { Box } from '../../models/box';
 
 const BOXES_STRING: string = "boxes";
 

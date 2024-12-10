@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BoxService } from '../../box/box.service';
+import { BoxService } from '../../services/box/box.service';
 import { Box, boxSizeToNumber } from '../../models/box';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';

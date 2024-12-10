@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder, FormGroup, Validators, ReactiveFormsModule
 } from '@angular/forms';
-import { BoxService } from '../../box/box.service';
+import { BoxService } from '../../services/box/box.service';
 import {
   Box, 
   BoxSize, 
